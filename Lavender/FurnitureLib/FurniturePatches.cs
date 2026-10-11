@@ -73,9 +73,11 @@ namespace Lavender.FurnitureLib
                 taskItem.image = item.image;
                 taskItem.itemType = TaskItem.Type.Furnitures;*/
                 __instance.availableFurnitures.Add(new BuildingSystem.FurnitureInfo(item, new BuildingSystem.FurnitureInfo.Meta(), taskItem, gameObject, amount, null));
-                __result = true;
             }
-            furnitureInfo.amount += amount;
+            else
+            {
+                furnitureInfo.amount += amount;
+            }
             __result = true;
 
             if (!BepinexPlugin.Settings.FurnitureShop_AddFurniture_Prefix_SkipOriginal.Value) return true;
